@@ -1,0 +1,12 @@
+{
+  "name": "mib/network",
+  "description": "PHP: Network Component",
+  "type": "library",
+  "keywords": [ "network", "component", "client", "server", "socket", "connection" ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Mib\\Component\\Network\\": "src/"
+    }
+  }
+}
