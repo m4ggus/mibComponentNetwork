@@ -85,4 +85,21 @@ class Socket extends AbstractSocket implements SocketInterface
 
         return $read;
     }
+
+    public function write($buffer, $length = 0)
+    {
+        $resource = $this->getResource();
+
+        if (null === $this->resource || false === $this->connected)
+            throw new \RuntimeException('unable to write to a unconnected socket');
+
+        $wrote = @socket_write($resource, $buffer, $length);
+
+        if (false === $wrote) {
+            $error = socket_last_error($resource);
+            throw new \RuntimeException(sprintf('socket_write failed with: "%s"', socket_strerror($error)));
+        }
+
+        return $wrote;
+    }
 }

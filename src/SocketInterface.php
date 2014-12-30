@@ -19,6 +19,16 @@ interface SocketInterface
     const BUFFER_SIZE = 4096;
 
     /**
+     * Connect socket to a tcp server
+     *
+     * @param $addr
+     * @param $port
+     * @param bool $async
+     */
+    public function connect($addr, $port, $async = false);
+
+
+    /**
      * Close the socket
      * Releases the used resource and make it available for reuse
      */
@@ -35,7 +45,7 @@ interface SocketInterface
      * @param int $port
      * @return int
      */
-    public function sendTo($buffer, $length = 0, $addr, $port = 0);
+    public function sendTo($buffer, $length, $addr, $port = 0);
 
     /**
      * Reads data from the socket
@@ -44,6 +54,9 @@ interface SocketInterface
      * @return mixed
      */
     public function read($length = self::BUFFER_SIZE, $type = self::RD_BINARY);
+
+
+    public function write($buffer, $length = 0);
 
     /**
      * Returns the underlying socket resource

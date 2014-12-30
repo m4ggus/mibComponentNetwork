@@ -1,6 +1,8 @@
 <?php
 
-class SocketTest extends PHPUnit_Framework_Testcase
+namespace UDP;
+
+class SocketTest extends \PHPUnit_Framework_Testcase
 {
     private $serverHost = '127.0.0.1';
     private $serverPort = 12345;
