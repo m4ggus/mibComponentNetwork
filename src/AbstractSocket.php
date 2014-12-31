@@ -47,6 +47,11 @@ abstract class AbstractSocket {
         $this->connected = false;
     }
 
+    public function isConnected()
+    {
+        return $this->connected;
+    }
+
     public function getResource()
     {
         return $this->resource;

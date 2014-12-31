@@ -34,6 +34,9 @@ interface SocketInterface
      */
     public function close();
 
+
+    public function isConnected();
+
     /**
      * Sends the amount of buffer data restricted by the given length to the address
      * If length is 0 the complete buffer size will be used
